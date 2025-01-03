@@ -1311,6 +1311,11 @@
   resolved "https://registry.npmmirror.com/@nutui/icons-vue-taro/-/icons-vue-taro-0.0.9.tgz#b5223eb01e2b987fdbe460e5d0439a66481e54f1"
   integrity sha512-10VYAtFC+o1X0anGs+y2PgF1NWMeLFz2JVMRw4BWLg6wbtVbYy9wukLxyGhZC6Yf6t39DcwaGVda8paV7K6/Ew==
 
+"@nutui/icons-vue@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmmirror.com/@nutui/icons-vue/-/icons-vue-0.1.1.tgz#d90b3e5d5e109aebb775e4dd5167d702f3adcec1"
+  integrity sha512-ekn6R9GNHWNUcV4pxdhQzrI1g1VhZ5zknklXoUJrCzt0RkRRLU0bUXX3ouWT0sl0U3MNJClnXAzZe7iPAvgPtw==
+
 "@nutui/nutui-taro@^4.2.8":
   version "4.3.13"
   resolved "https://registry.npmmirror.com/@nutui/nutui-taro/-/nutui-taro-4.3.13.tgz#d906a229559fd80d9d5226e7242e1bb97b6947ce"

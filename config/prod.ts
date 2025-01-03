@@ -1,6 +1,10 @@
-import type { UserConfigExport } from "@tarojs/cli";
+import type { UserConfigExport } from '@tarojs/cli'
 export default {
   mini: {},
+  env: {
+    NODE_ENV: '"production"',
+    SUPPORT_TARO_POLYFILL: '"enabled"' // 3.+ 默认值为 enabled; 4.+ 默认值为 disabled
+  },
   h5: {
     /**
      * WebpackChain 插件配置

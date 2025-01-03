@@ -10,20 +10,5 @@ module.exports = {
         compiler: 'vite'
       }
     ]
-  ],
-  plugins: [
-    '@babel/plugin-proposal-class-properties',
-    [
-      'module-resolver',
-      {
-        root: ['./src'], // 设置根目录
-        alias: {
-          '@components': './src/components',
-          '@assets': './src/assets',
-          '@utils': './src/utils'
-          // 可以根据需要添加更多别名
-        }
-      }
-    ]
   ]
 }

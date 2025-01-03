@@ -1,24 +1,29 @@
 import { getToken } from './auth'
 import { login, logout } from './auth'
+import * as dd from 'dingtalk-jsapi'
 
 const getBaseUrl = () => {
-  return getApp().globalData.env === 'dev'
-  ? 'https://station.zdwp.tech/api/zdwp-idea'
-  : 'https://hh.zdwp.net/api/zdwp-idea'
+  return 'https://station.zdwp.tech/api/zdwp-idea'
+  // return getApp().globalData.env === 'dev'
+  //   ? 'https://station.zdwp.tech/api/zdwp-idea'
+  //   : 'https://hh.zdwp.net/api/zdwp-idea'
 }
 
 export const requestLogin = () => {
   return new Promise((resolve, reject) => {
     dd.getAuthCode({
-      success: async function (res) {
+      corpId: 'dingbb84806e22b02664a1320dcb25e91351',
+      clientId: 'ding44qiejdpfeezamy1',
+      onSuccess: async function (res) {
         try {
-          const r = await login(res.authCode)
+          const r = await login(res.code)
           resolve(r)
-        } catch(e) {
+        } catch (e) {
+          console.log(e)
           reject(e)
         }
       },
-      fail: function (err) {
+      onFail: function (err) {
         dd.alert({
           title: '登录提示',
           content: '当前用户验证失败，' + JSON.stringify(err),
@@ -60,7 +65,7 @@ const request = {
     let that = this
     const headers = getHeaders(httpHeaders)
     return new Promise((resolve, reject) => {
-      dd.httpRequest({
+      fetch({
         url: getFullUrl(url),
         method: 'GET',
         dataType: 'json',
@@ -97,7 +102,7 @@ const request = {
         ? { 'Content-Type': 'application/json' }
         : getHeaders(httpHeaders)
     return new Promise((resolve, reject) => {
-      dd.httpRequest({
+      fetch({
         url: getFullUrl(url),
         method: 'POST',
         dataType,

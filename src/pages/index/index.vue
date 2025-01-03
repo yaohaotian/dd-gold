@@ -1,15 +1,17 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { reqIdeaList } from '@/api/sys'
 
-// const show = ref(false)
-// const onClick = () => {
-//   show.value = true
-// }
+import topbar from '@/components/topbar.vue'
+import navbar from '@/components/navbar.vue'
+import message from '@/components/message.vue'
+
+onMounted(() => {})
+
+const getIdeaList = async () => {}
 </script>
 
 <template>
-  <view class="index">
-    <nut-button type="primary" @click="onClick">按钮</nut-button>
-    <!-- <nut-toast v-model:visible="show" msg="你成功了" /> -->
-  </view>
+  <navbar title="首页" />
+  <topbar />
 </template>

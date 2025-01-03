@@ -6,12 +6,17 @@ import NutUIResolver from '@nutui/auto-import-resolver'
 
 import Components from 'unplugin-vue-components/vite'
 
+const path = require('path')
+
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<'vite'>(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport<'vite'> = {
     projectName: 'dd-gold',
+    alias: {
+      '@': path.resolve(__dirname, '..', 'src')
+    },
     date: '2024-12-31',
-    designWidth (input) {
+    designWidth(input) {
       // 配置 NutUI 375 尺寸
       if (input?.file?.replace(/\\+/g, '/').indexOf('@nutui') > -1) {
         return 375
@@ -28,20 +33,17 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     sourceRoot: 'src',
     outputRoot: 'dist',
     plugins: ['@tarojs/plugin-html'],
-    defineConstants: {
-    },
+    defineConstants: {},
     copy: {
-      patterns: [
-      ],
-      options: {
-      }
+      patterns: [],
+      options: {}
     },
     framework: 'vue3',
     compiler: {
       type: 'vite',
       vitePlugins: [
         Components({
-          resolvers: [NutUIResolver({taro: true})]
+          resolvers: [NutUIResolver({ taro: true })]
         })
       ]
     },
@@ -49,9 +51,7 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
       postcss: {
         pxtransform: {
           enable: true,
-          config: {
-
-          }
+          config: {}
         },
         cssModules: {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -89,7 +89,7 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
       appName: 'taroDemo',
       postcss: {
         cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+          enable: false // 默认为 false，如需使用 css modules 功能，则设为 true
         }
       }
     }

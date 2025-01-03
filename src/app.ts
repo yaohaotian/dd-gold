@@ -1,15 +1,20 @@
 import { createApp } from 'vue'
+import { IconFont } from '@nutui/icons-vue'
+import '@nutui/icons-vue/dist/style_iconfont.css'
+
 import vconsole from 'vconsole'
 
-import './app.scss'
+import { requestLogin } from '@/utils/request1'
 
+import './app.scss'
 
 new vconsole()
 
 const App = createApp({
-  onShow(options) {
+  async onLaunch(options) {
+    await requestLogin()
   },
-  // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
+  onShow() {}
 })
-
+App.use(IconFont)
 export default App
