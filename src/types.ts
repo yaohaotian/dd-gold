@@ -25,6 +25,7 @@ export interface Idea {
   acceptCreateTime: string
   anonymous: boolean
   isPublic: number
+  pics?: any[]
 }
 
 export interface IdeaDetail {
@@ -45,15 +46,28 @@ export interface IdeaDetail {
   commentCount: number
   likeCount: number
   collectCount: number
-  liked: true
-  collected: true
+  liked: boolean
+  collected: boolean
   acceptMessage: string
   acceptCreator: string
   acceptCreatorName: string
   acceptCreatorAvatar: string
   acceptCreateTime: string
-  anonymous: true
+  anonymous: boolean
   isPublic: number
   pics: any[]
   files: any[]
+}
+
+export interface MyDetail {
+  approvingCount?: number
+  avatar?: string
+  confirmingCount?: number | null
+  ideas?: any[]
+  nickName?: string
+  points?: number
+  publishedCount?: number
+  rejectCount?: number
+  totalCount?: number
+  unSubmitCount?: number
 }

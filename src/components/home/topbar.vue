@@ -60,3 +60,9 @@ const getIdeaList = async (item: any) => {
     </nut-tab-pane>
   </nut-tabs>
 </template>
+
+<style lang="scss" scoped>
+.nut-tab-pane {
+  padding: 0;
+}
+</style>

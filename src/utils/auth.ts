@@ -21,6 +21,8 @@ export const login = (authCode) => {
     // const result = await loginApi(authCode)
     loginApi(authCode)
       .then(({ data }) => {
+        console.log(authCode);
+        console.log(data.token);
         storage.set(TokenKey, data.token)
         storage.set(UserKey, {
           userId: data.userId,
