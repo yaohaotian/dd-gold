@@ -6,7 +6,7 @@ import '@nutui/icons-vue/dist/style_iconfont.css'
 import './app.scss'
 
 import { requestLogin } from '@/utils/request1'
-// new vconsole()
+new vconsole()
 
 const App = createApp({
   async onLaunch(options) {

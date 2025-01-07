@@ -16,6 +16,7 @@ export const requestLogin = () => {
       clientId: 'ding44qiejdpfeezamy1',
       onSuccess: async function (res) {
         try {
+          console.log(res,'@@@@')
           const r = await login(res.code)
           resolve(r)
         } catch (e) {

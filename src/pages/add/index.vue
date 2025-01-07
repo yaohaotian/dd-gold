@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, reactive } from 'vue'
-import Taro from '@tarojs/taro';
+import Taro from '@tarojs/taro'
 import { reqDepartmentList } from '@/api/sys'
 
 const uploadUrl = 'https://xxxxx'
@@ -59,8 +59,7 @@ const confirm = ({ selectedValue, selectedOptions }) => {
 }
 
 onMounted(() => {
-
-  console.log(Taro.chooseImage);
+  console.log(Taro.chooseImage)
 
   getDepartmentList()
 })
@@ -121,16 +120,33 @@ onMounted(() => {
       </nut-uploader>
     </nut-form-item>
   </nut-form>
+  <div class="btm-btn">
+    <nut-button>暂存</nut-button>
+    <nut-button color="#496EF2">提交</nut-button>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .nut-form {
   box-shadow: none;
+  padding-bottom: 80px;
 }
 .nut-uploader {
   width: 100%;
   :deep(.nut-uploader__slot) {
     width: 100%;
+  }
+}
+.btm-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  bottom: 40px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  .nut-button{
+    width: 45%;
   }
 }
 </style>
